@@ -4,7 +4,7 @@
   "logo": "https://lh3.googleusercontent.com/-HPcn7AqepNg/AAAAAAAAAAI/AAAAAAAAAAA/ALKGfknb1BkQiq-8_KUVOYcNAJ4swKivDQ/photo.jpg",
   "keywords": ["python3", "telegram", "MusicBot", "telegram-bot", "pyrogram"],
   "repository": "https://github.com/devgaganin/save_restricted-content-telegram-bot-repo",
-  "success_url": "https://devgagan.in",
+  "success_url": "https://devgagan.in/",
   "env": {
     "API_ID": {
       "description": "Get this value from https://my.telegram.org",
@@ -60,7 +60,7 @@
     },
     "AD_API": {
       "description": "Batch size for premium users",
-      "value": "52b4a2cf4687d81e7d3f8f2b7bc2943f618e78cb",
+      "value": "3bff7ae6855bbee7959a722c7c2691240e442c75",
       "required": false
     },
     
