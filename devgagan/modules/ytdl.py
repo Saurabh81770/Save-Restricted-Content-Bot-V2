@@ -41,7 +41,7 @@ from mutagen.mp3 import MP3
 
 import subprocess
 
-def apply_text_watermark(input_video_path, output_video_path, watermark_text="Join @skillwithgaurav"):
+def apply_text_watermark(input_video_path, output_video_path, watermark_text="Join @skillwithsaurabh"):
     # Using ffmpeg with adaptive safe margin for both landscape and portrait
     cmd = [
         "ffmpeg", "-i", input_video_path,
@@ -162,7 +162,7 @@ async def process_audio(client, event, url, cookies_env_var=None):
                 name=None,
                 progress_bar_function=lambda done, total: progress_callback(done, total, chat_id)
             )
-            await client.send_file(chat_id, uploaded, caption=f"**{title}**\n\n**__Powered by skillwithgaurav__**")
+            await client.send_file(chat_id, uploaded, caption=f"**{title}**\n\n**__Powered by skillwithsaurabh__**")
             if prog:
                 await prog.delete()
         else:
