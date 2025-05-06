@@ -4,7 +4,7 @@
 #              and uploading them back to Telegram.
 # Author: Unknown
 # GitHub: https://github.com/devgaganin/
-# Telegram: https://t.me/team_spy_pro
+# Telegram: https://t.me/Mr_Abhijit_1
 # YouTube: https://youtube.com/@dev_gagan
 # Created: 2025-01-11
 # Last Modified: 2025-01-11
@@ -223,4 +223,4 @@ async def shellrunner(_, message):
 @app.on_message(filters.command("restart") & filters.user(OWNER_ID))
 async def update(_, message):
     await message.reply("Restarting ... ")
-    os.execl(sys.executable, sys.executable, "-m", "devgagan")
+    os.execl(sys.executable, sys.executable, "-m", "saurabh")
