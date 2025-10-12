@@ -1,17 +1,3 @@
-# ---------------------------------------------------
-# File Name: func.py
-# Description: A Pyrogram bot for downloading files from Telegram channels or groups 
-#              and uploading them back to Telegram.
-# Author: Gagan
-# GitHub: https://github.com/devgaganin/
-# Telegram: https://t.me/team_spy_pro
-# YouTube: https://youtube.com/@dev_gagan
-# Created: 2025-01-11
-# Last Modified: 2025-01-11
-# Version: 2.0.5
-# License: MIT License
-# ---------------------------------------------------
-
 import math
 import time , re
 from pyrogram import enums
@@ -87,7 +73,7 @@ PROGRESS_BAR = """\n
 │ **__Speed:__** {3}/s
 │ **__ETA:__** {4}
 ╰─────────────────────╯
-"""
+""""
 async def progress_bar(current, total, ud_type, message, start):
 
     now = time.time()
