@@ -1,18 +1,3 @@
-# ---------------------------------------------------
-# File Name: get_func.py
-# Description: A Pyrogram bot for downloading files from Telegram channels or groups 
-#              and uploading them back to Telegram.
-# Author: Gagan
-# GitHub: https://github.com/devgaganin/
-# Telegram: https://t.me/Mr_Abhijit_1
-# YouTube: https://youtube.com/@dev_gagan
-# Created: 2025-01-11
-# Last Modified: 2025-02-01
-# Version: 2.0.5
-# License: MIT License
-# Improved logic handles
-# ---------------------------------------------------
-
 import asyncio
 import time
 import gc
