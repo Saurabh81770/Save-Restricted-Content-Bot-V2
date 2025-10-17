@@ -1,24 +1,49 @@
-import threading
-from flask import Flask
-from pyrogram import Client
+import asyncio
+import importlib
+import gc
+from pyrogram import idle
+from devgagan.modules import ALL_MODULES
+from devgagan.core.mongo.plans_db import check_and_remove_expired_users
+from aiojobs import create_scheduler
 
-API_ID = int("your_api_id")
-API_HASH = "your_api_hash"
-BOT_TOKEN = "your_bot_token"
+# ----------------------------Bot-Start---------------------------- #
 
-app = Flask(__name__)
+loop = asyncio.get_event_loop()
 
-@app.route('/')
-def home():
-    return "Bot is running fine!"
+# Function to schedule expiry checks
+async def schedule_expiry_check():
+    scheduler = await create_scheduler()
+    while True:
+        await scheduler.spawn(check_and_remove_expired_users())
+        await asyncio.sleep(60)  # Check every hour
+        gc.collect()
 
-def run_web():
-    app.run(host="0.0.0.0", port=8080)
+async def devggn_boot():
+    for all_module in ALL_MODULES:
+        importlib.import_module("devgagan.modules." + all_module)
+    print("""
+---------------------------------------------------
+📂 Bot Deployed successfully ...
+📝 Description: A Pyrogram bot for downloading files from Telegram channels or groups 
+                and uploading them back to Telegram.
+👨‍💻 Author: saurabh
+🌐 GitHub:
+📬 Telegram: https://t.me/saurabh_patel9412
+▶️ YouTube:
+🗓️ Created: 2025-01-11
+🔄 Last Modified: 2025-01-11
+🛠️ Version: 2.0.5
+📜 License: MIT License
+---------------------------------------------------
+""")
 
-def run_bot():
-    bot = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
-    bot.run()
+    asyncio.create_task(schedule_expiry_check())
+    print("Auto removal started ...")
+    await idle()
+    print("Bot stopped...")
+
 
 if __name__ == "__main__":
-    threading.Thread(target=run_web).start()
-    run_bot()
+    loop.run_until_complete(devggn_boot())
+
+# ------------------------------------------------------------------ #
